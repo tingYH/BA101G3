@@ -36,7 +36,7 @@ public class AuthorityFeatureServlet extends HttpServlet {
 
                 /*************************** 2.開始查詢資料 ****************************************/
                 Authority_FeatureService authority_FeatureSvc = new Authority_FeatureService();
-                Set<Authority_FeatureVO> set = authority_FeatureSvc.getOneAF(auth_no);
+                List<Authority_FeatureVO> set = authority_FeatureSvc.getOneAF(auth_no);
 
                 /*************************** 3.查詢完成,準備轉交(Send the Success view) ************/
                 req.setAttribute("listAFs_ByAuth_No", set);    // 資料庫取出的list物件,存入request
