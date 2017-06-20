@@ -4,11 +4,11 @@
 <%@ page import="com.admin.model.*" %>
 <%-- 此頁練習採用 EL 的寫法取值 --%>
 
-<%
-    /* Authority_FeatureService authority_FeatureSvc = new Authority_FeatureService();
+<%-- <%
+   /*  Authority_FeatureService authority_FeatureSvc = new Authority_FeatureService();
      List<Authority_FeatureVO> list = authority_FeatureSvc.getAll();
      pageContext.setAttribute("list",list); */
-%>
+%> --%>
 
 <jsp:useBean id="authority_FeatureSvc" scope="page"
              class="com.admin.model.Authority_FeatureService"/>
