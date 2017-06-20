@@ -13,11 +13,11 @@ public class Product_Message_ReportJDBCDAO implements Product_Message_ReportDAO_
 	private static final String INSERT_STMT = "INSERT INTO product_message_report (pmsg_no, mem_no, pmrpt_date, pmrpt_rsn, pmrpt_is_cert, pmrpt_unrsn) VALUES (?, ?, SYSDATE, ?, '0', ?)";
 	// 查詢資料
 	private static final String GET_ALL_STMT = "SELECT * FROM product_message_report";
-	private static final String GET_ONE_STMT = "SELECT * FROM product_message_report where pmsg_no = ? and mem_no = ?";
+	private static final String GET_ONE_STMT = "SELECT * FROM product_message_report WHERE pmsg_no = ? AND mem_no = ?";
 	// 刪除資料
-	private static final String DELETE_PRORPT = "DELETE FROM product_message_report where pmsg_no = ? and mem_no = ?";	
+	private static final String DELETE_PRORPT = "DELETE FROM product_message_report WHERE pmsg_no = ? AND mem_no = ?";	
 	// 修改資料
-	private static final String UPDATE = "UPDATE product_message_report set pmrpt_date=?, pmrpt_rsn=?, pmrpt_is_cert=?, pmrpt_unrsn=? where pmsg_no=? and mem_no=?";
+	private static final String UPDATE = "UPDATE product_message_report SET pmrpt_date=?, pmrpt_rsn=?, pmrpt_is_cert=?, pmrpt_unrsn=? where pmsg_no=? AND mem_no=?";
 	@Override
 	public void insert(Product_Message_ReportVO product_message_reportVO) {
 
