@@ -13,9 +13,9 @@ public class Buyer_ReportJDBCDAO implements Buyer_ReportDAO_interface {
 	private static final String INSERT_STMT = "INSERT INTO buyer_report (ord_no, mem_no, buyrpt_date, buyrpt_rsn, buyrpt_is_cert, buyrpt_unrsn) VALUES (?, ?, SYSDATE, ?, '0', ?)";
 	// 查詢資料
 	private static final String GET_ALL_STMT = "SELECT * FROM buyer_report";
-	private static final String GET_ONE_STMT = "SELECT * FROM buyer_report where ord_no = ? and mem_no = ?";
+	private static final String GET_ONE_STMT = "SELECT * FROM buyer_report WHERE ord_no = ? AND mem_no = ?";
 	// 修改資料
-	private static final String UPDATE = "UPDATE buyer_report set buyrpt_date=?, buyrpt_rsn=?, buyrpt_is_cert=?, buyrpt_unrsn=? where ord_no=? and mem_no=?";
+	private static final String UPDATE = "UPDATE buyer_report set buyrpt_date=?, buyrpt_rsn=?, buyrpt_is_cert=?, buyrpt_unrsn=? where ord_no=? AND mem_no=?";
 	@Override
 	public void insert(Buyer_ReportVO buyer_reportVO) {
 
