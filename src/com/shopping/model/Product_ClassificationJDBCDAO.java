@@ -13,9 +13,9 @@ public class Product_ClassificationJDBCDAO implements Product_ClassificationDAO_
 	private static final String INSERT_STMT = "INSERT INTO product_classification (proc_no, proc_name) VALUES ('PC'||LPAD(to_char(proc_no_seq.NEXTVAL), 2, '0'), ?)";
 	// 查詢資料
 	private static final String GET_ALL_STMT = "SELECT proc_no , proc_name FROM product_classification";
-	private static final String GET_ONE_STMT = "SELECT proc_no, proc_name FROM product_classification where proc_no = ?";
+	private static final String GET_ONE_STMT = "SELECT proc_no, proc_name FROM product_classification WHERE proc_no = ?";
 	// 修改資料
-	private static final String UPDATE = "UPDATE product_classification set proc_name=? where proc_no = ?";
+	private static final String UPDATE = "UPDATE product_classification set proc_name=? WHERE proc_no = ?";
 
 	@Override
 	public void insert(Product_ClassificationVO product_classificationVO) {
