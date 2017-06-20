@@ -13,9 +13,9 @@ public class OrderlistJDBCDAO implements OrderlistDAO_interface {
 	private static final String INSERT_STMT = "INSERT INTO orderlist (ord_no, pro_no, mem_no, ord_amt, ord_startd, ord_endd, ord_payd, ord_getadd) VALUES ('ORD'||LPAD(to_char(ord_no_seq.NEXTVAL), 5, '0'), ?, ?, ?, SYSDATE, ?, ?, ?)";
 	// 查詢資料
 	private static final String GET_ALL_STMT = "SELECT * FROM orderlist";
-	private static final String GET_ONE_STMT = "SELECT * FROM orderlist where ord_no = ?";
+	private static final String GET_ONE_STMT = "SELECT * FROM orderlist WHERE ord_no = ?";
 	// 修改資料
-	private static final String UPDATE = "UPDATE orderlist set pro_no=?, mem_no=?, ord_amt=?, ord_startd=?, ord_endd=?, ord_payd=?, ord_getadd=? where ord_no=?";
+	private static final String UPDATE = "UPDATE orderlist set pro_no=?, mem_no=?, ord_amt=?, ord_startd=?, ord_endd=?, ord_payd=?, ord_getadd=? WHERE ord_no=?";
 	@Override
 	public void insert(OrderlistVO orderlistVO) {
 
