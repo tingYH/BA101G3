@@ -38,11 +38,7 @@ public class Chat_FriendService {
         return chat_FriendVO;
     }
 
-    public void deleteCF(String cf_no) {
-        dao.delete(cf_no);
-    }
-
-    public Chat_FriendVO getOneCF(String cf_no) {
+    public Chat_FriendVO getOneChat_Friend(String cf_no) {
         return dao.findByPrimaryKey(cf_no);
     }
 
