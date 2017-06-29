@@ -24,7 +24,7 @@ public class BabyJDBCDAO implements BabyDAO_interface{
 	private static final String GET_ONE_STMT = 
 		"SELECT * FROM baby WHERE baby_no = ?";
 	private static final String UPDATE_STMT = 
-		"UPDATE baby SET mem_no=?, baby_aka=?, baby_bday=?, baby_gen=?, baby_hc=?, baby_ht=?, baby_wt=?, baby_is_ar=?, baby_is_ab=?, baby_is_ac=?, baby_is_sf=?, baby_is_ad=?, baby_rd=? WHERE baby_no = ?";
+		"UPDATE baby SET baby_aka=?, baby_bday=?, baby_gen=?, baby_hc=?, baby_ht=?, baby_wt=?, baby_is_ar=?, baby_is_ab=?, baby_is_ac=?, baby_is_sf=?, baby_is_ad=?, baby_rd=? WHERE baby_no = ?";
 	
 	
 	@Override
@@ -89,20 +89,19 @@ public class BabyJDBCDAO implements BabyDAO_interface{
 		con = DriverManager.getConnection(URL, USER, PASSWORD);
 		pstmt = con.prepareStatement(UPDATE_STMT);
 
-		pstmt.setString(1, babyVO.getMem_no());
-		pstmt.setString(2, babyVO.getBaby_aka());
-		pstmt.setDate(3, babyVO.getBaby_bday());
-		pstmt.setString(4, babyVO.getBaby_gen());
-		pstmt.setDouble(5, babyVO.getBaby_hc());
-		pstmt.setDouble(6, babyVO.getBaby_ht());
-		pstmt.setDouble(7, babyVO.getBaby_wt());
-		pstmt.setString(8, babyVO.getBaby_is_ar());
-		pstmt.setString(9, babyVO.getBaby_is_ab());
-		pstmt.setString(10, babyVO.getBaby_is_ac());
-		pstmt.setString(11, babyVO.getBaby_is_sf());
-		pstmt.setString(12, babyVO.getBaby_is_ad());
-		pstmt.setString(13, babyVO.getBaby_rd());		
-		pstmt.setString(14, babyVO.getBaby_no());
+		pstmt.setString(1, babyVO.getBaby_aka());
+		pstmt.setDate(2, babyVO.getBaby_bday());
+		pstmt.setString(3, babyVO.getBaby_gen());
+		pstmt.setDouble(4, babyVO.getBaby_hc());
+		pstmt.setDouble(5, babyVO.getBaby_ht());
+		pstmt.setDouble(6, babyVO.getBaby_wt());
+		pstmt.setString(7, babyVO.getBaby_is_ar());
+		pstmt.setString(8, babyVO.getBaby_is_ab());
+		pstmt.setString(9, babyVO.getBaby_is_ac());
+		pstmt.setString(10, babyVO.getBaby_is_sf());
+		pstmt.setString(11, babyVO.getBaby_is_ad());
+		pstmt.setString(12, babyVO.getBaby_rd());		
+		pstmt.setString(13, babyVO.getBaby_no());
 		
 		
 		pstmt.executeUpdate();
@@ -136,7 +135,7 @@ public class BabyJDBCDAO implements BabyDAO_interface{
 }
 
 	@Override
-	public BabyVO findByPrimary(String baby_no) {
+	public BabyVO findByPrimaryKey(String baby_no) {
 		BabyVO babyVO = null;
 		Connection con = null;
 		PreparedStatement pstmt = null;
@@ -300,7 +299,6 @@ public class BabyJDBCDAO implements BabyDAO_interface{
 		// 修改 OK
 //		BabyVO babyVO2 = new BabyVO();
 //		babyVO2.setBaby_no("BABY0001");
-//		babyVO2.setMem_no("M0000001");
 //		babyVO2.setBaby_aka("小BB");
 //		babyVO2.setBaby_bday(java.sql.Date.valueOf("2017-01-09"));
 //		babyVO2.setBaby_gen("0");
@@ -317,7 +315,7 @@ public class BabyJDBCDAO implements BabyDAO_interface{
 //		System.out.println("---資料成功---");
 		
 		// 查詢單筆 OK
-//		BabyVO babyVO3 = dao.findByPrimary("BABY0001");
+//		BabyVO babyVO3 = dao.findByPrimaryKey("BABY0001");
 //		System.out.print(babyVO3.getBaby_no() + ",");
 //		System.out.print(babyVO3.getMem_no() + ",");
 //		System.out.print(babyVO3.getBaby_aka() + ",");
