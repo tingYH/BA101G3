@@ -217,8 +217,8 @@ HomePage Start
 }
 
 .diaryBorder{
-	/*margin-bottom: 0px;
-	margin-top: 0px;*/
+	/* margin-bottom: 0px;
+	margin-top: 0px; */
 	margin: 0px;
 	padding: 0px;
 	width: 100%;
@@ -228,6 +228,23 @@ HomePage Start
 	overflow: hidden;
 }
 
+/* 單一成長日誌顯示 */
+.oneDiaryBorder{
+	margin: 0px;
+	margin-top: 20px;
+	padding: 0px;
+	width: 100%;
+	height: auto;
+	border: solid 10px;
+    border-image: url("../pic/borderimg100.png") 27 27 round stretch;
+	overflow: hidden;
+}
+
+.oneDiaryBorder img{
+	border: solid 15px;
+    border-image: url("../pic/borderimg100.png") 27 27 round stretch;
+}	
+
 .topic{
 	position: relative;
 }
@@ -236,19 +253,33 @@ HomePage Start
 	font: bold 30px 華康兒風體W4;
 }
 
+.tableTitleBorder{
+	height: auto;
+	border: solid 10px;
+    border-image: url("../pic/borderimg100.png") 27 27 round stretch;
+}
+
 
 /*新增、刪除*/
 .btnDiaryControl .btn{
-	font: bold 24px 華康兒風體W4;
-	padding-left: 5px;
+	font: bold 20px 華康兒風體W4;
+	padding-left: 0.5px;
 	line-height: 12px;
 	letter-spacing: 8px;
-	width: 100px;
+	width: 80px;
 	height: 50px;
 	margin-top: 30px;
 	margin-left: 0px;
 	border: solid 15px;
     border-image: url("../pic/borderimg1002.png") 27 27 round stretch;
+}
+.btnDiaryControl>.updateConfirm{
+	width: 135px;
+	margin-top: 15px;
+}
+
+.updateConfirmPadding{
+	padding: 6.8px;
 }
 
 /*切換頁面*/
@@ -287,6 +318,16 @@ HomePage Start
     border-image: url("../pic/borderimg100.png") 27 27 round stretch;
     padding-top: 10px;
     padding-bottom: 10px;
+}
+
+/* 表格內字體 */
+.centerTable tr td{
+	font: 16px '微軟正黑體';
+	padding-top: 10px; 
+}
+
+.centerTable tr td:first-of-type{
+	font: bold 16px '微軟正黑體'; 
 }
 
 

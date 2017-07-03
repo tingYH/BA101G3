@@ -16,6 +16,7 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
 	<![endif]-->
+	<script src="https://code.jquery.com/jquery.js"></script>
 	<script src="/BA101G3/utility/ckeditor/ckeditor.js"></script>
 	<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
 	<link rel="stylesheet" href="/BA101G3/utility/ckeditor/contents.css">
@@ -123,13 +124,13 @@
 	<section>
 		<div class="container">
 			<div class="col-xs-12 col-sm-10 col-sm-offset-1 centerTable">
-				<table id="tableWidth" border='1' cellpadding='5' cellspacing='0' style='width: 100%'>
-					<tr bgcolor='#CCCCFF' align='center' valign='middle' height='20'>
+				<table border='1' cellpadding='5' cellspacing='0' style='width: 100%'>
+					<tr align='center' valign='middle' height='20'>
 						<td>
-						<h3>成長日誌資料新增 - addGrowing_Diary.jsp</h3>
-						</td>
-						<td>
-						   <a href="<%=request.getContextPath()%>/frontend/diary/select_growing_diary_page.jsp">回首頁</a>
+							<div class='tableTitleBorder'>
+								<h3>成長日誌資料新增 - addGrowing_Diary.jsp</h3>
+						   		<a href="<%=request.getContextPath()%>/frontend/diary/select_growing_diary_page.jsp">回首頁</a>
+							</div>
 					    </td>
 					</tr>
 				</table>
@@ -146,7 +147,7 @@
 					</font>
 				</c:if>
 				
-				<FORM METHOD="post" ACTION="<%=request.getContextPath()%>/diary/growing_diary.do" name="form1" enctype="multipart/form-data">
+				<FORM NAME="insertConfirm" METHOD="post" ACTION="<%=request.getContextPath()%>/diary/growing_diary.do" name="form1" enctype="multipart/form-data">
 				<table border="0" style='width: 100%'>
 					<!-- <tr>
 						<td>成長日誌日期:</td>
@@ -197,7 +198,12 @@
 				</table>
 				<br>
 				<input type="hidden" name="action" value="insert">
-				<input type="submit" value="送出新增"></FORM>
+				</FORM>
+			</div>
+			<div class="col-xs-12 col-sm-10 col-sm-offset-1 updateConfirmPadding">
+				<div class="btn-group btnDiaryControl">
+					<a href="javascript:document.insertConfirm.submit()" class="btn btn-default updateConfirm" role="button">送出新增</a>
+				</div>
 			</div>
 		</div>
 	</section>
@@ -211,8 +217,6 @@
 		</div>
 	</footer>
 	
-	<script src="https://code.jquery.com/jquery.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </body>
 
 </html>

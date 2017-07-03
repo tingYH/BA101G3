@@ -249,19 +249,34 @@ public class Growing_DiaryServlet extends HttpServlet {
 
 			try {
 				/***************************1.接收請求參數***************************************/
-				String gd_no = req.getParameter("gd_no");
+				String[] deleteDiaryList = req.getParameterValues("deleteDiaryList");
 				
 				/***************************2.開始刪除資料***************************************/
 				Growing_DiaryService growing_diarySvc = new Growing_DiaryService();
-				Growing_DiaryVO growing_diaryVO = growing_diarySvc.getOneGrowing_Diary(gd_no);
-				growing_diarySvc.deleteGrowing_Diary(gd_no);
-				
+				if(deleteDiaryList != null) {
+					if(deleteDiaryList.length != 0) {
+						for(String gd_no:deleteDiaryList) {
+						Growing_DiaryVO growing_diaryVO = growing_diarySvc.getOneGrowing_Diary(gd_no);
+						growing_diarySvc.deleteGrowing_Diary(gd_no);
+						}
+					}
+				}else {
+					String gd_no = req.getParameter("gd_no");
+					Growing_DiaryVO growing_diaryVO = growing_diarySvc.getOneGrowing_Diary(gd_no);
+					growing_diarySvc.deleteGrowing_Diary(gd_no);
+				}
 				/***************************3.刪除完成,準備轉交(Send the Success view)***********/
 //				DeptService deptSvc = new DeptService();
 //				if(requestURL.equals("/dept/listEmps_ByDeptno.jsp") || requestURL.equals("/dept/listAllDept.jsp"))
 //					req.setAttribute("listEmps_ByDeptno",deptSvc.getEmpsByDeptno(empVO.getDeptno())); // 資料庫取出的list物件,存入request
 				
-				String url = requestURL;
+				String url = "";
+				if(requestURL == null) {
+					url = "/frontend/diary/listAllGrowing_Diary.jsp";
+				}else {
+					url = requestURL;
+				}
+					
 				RequestDispatcher successView = req.getRequestDispatcher(url); // 刪除成功後,轉交回送出刪除的來源網頁
 				successView.forward(req, res);
 				
